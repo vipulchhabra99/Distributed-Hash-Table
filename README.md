@@ -1,13 +1,29 @@
- **DISTRIBUTED SYSTEMS**
- **FINAL PROJECT**
- **Roll Number - 2019121001**
+**DISTRIBUTED HASH TABLE FOR DISTRIBUTED DNS**
 
 **Installing Dependencies**
 
-It is assumed that the `Python3+` version is being used for evaluation.
-Flask
+The current project uses `Python3+` version.
 
-    pip3 install flask
+To install the dependencies use
+
+    pip3 install -r requirements.txt
+
+**Code Structure**
+
+
+The project used the Flask framework for both server and the client. The server folder contains all the files related to the server.
+
+
+The client folder contains the flask-based web app, which talks to the API created using a cluster of servers. The client needs to communicate only to one of the servers in the cluster for any request, and the request would be automatically rerouted. 
+
+**Assumptions**
+
+The client is created based on the assumption that one of the servers from the cluster is running on port `8080`  and can be modified accordingly.
+
+**Brief-Details for Setting It up**
+
+
+We can spin up the multiple servers on different ports and IPs, but they must be attached in a ring to communicate with each other. All the servers handle the requests, and they reroute the requests to appropriate servers in the ring, handling the given range of hash-values of the entered key.
 
 **Execution of Code**
 
@@ -22,4 +38,3 @@ To attach to a ring
 To execute the client use -
 
     python3 client.py
-
