@@ -14,7 +14,7 @@ To install the dependencies use
 The project used the Flask framework for both server and the client. The server folder contains all the files related to the server.
 
 
-The client folder contains the flask-based web app, which talks to the API created using a cluster of servers. The client needs to communicate only to one of the servers in the cluster for any request, and the request would be automatically rerouted. 
+The client folder contains the flask-based web app, which talks to the API created using a cluster of servers.
 
 **Assumptions**
 
